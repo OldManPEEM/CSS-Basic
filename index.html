@@ -4,21 +4,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Format</title>
-    <style>
-        /*internal embed*/
-        p{
-            font-style: italic;
-        }
-    </style>
-    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
 </head>
 <body>
-    <!--inline-->
-    <p style="color: blueviolet;font-weight: bolder;">Hello CSS</p>
-    <p>CSS Hello</p>
-    <h1>start CSS</h1>
-    <h1 class="title">CSS CSS CSS</h1>
-    <p id="message">Lorem ipsum dolor sit amet.</p>
+    <h1>หน่วย (unit)ใน CSS (Absolute) แบบตายตัว</h1>
+    <h5>px</h5>
+    <p>Pixel (พิกเซล) เป็นหน่วยที่นิยมใช้มากที่สุด โดยที่ 1 px = 0.75pt 
+        สัมพันธ์กับรายละเอียดหน้าจอ</p>
+    <h5>pt</h5>
+    <p>Point โดยที่ 1pt = 1/72 inchs ใช้ในงานสิ่งพิมพ์</p>
+    <h5>cm</h5>
+    <p>เชนติเมตร</p>
+    <h5>mm</h5>
+    <p>มิลลิเมตร</p>
+    <h5>in</h5>
+    <p>inches(1in = 96px = 2.54cm)</p>
+    <h5>pc</h5>
+    <p>picas (1pc = 12pt)</p>
+
+    <h1>หน่วย(Unit) ใน CSS (Relative) แบบอัตราส่วน</h1> <!--มักใช้กับ Web responsive-->
+    <h5>%</h5>
+    <p>เป็นการกำหนดขนาดเป็นเปอร์เซ็นต์ มักใช้กับความกว้างหรือสูง</p>
+    <h5>em</h5>
+    <p>อ้างอิงขนาดกับ element parent ที่ใกล้ที่สุด ใช้ในการกำหนดจำนวนเท่าของ
+        ขนาดปัจจุบัน เช่น หากขนาดที่ใช้ตอนนี้คือ 10 px </p>
+        <p>- ถ้ากำหนดขนาดเป็น 2em จะหมายถึง 2เท่าของขนาดปัจจุบัน คือ 20px</p>
+        <p>- ถ้ากำหนดขนาดเป็น 1.4em จะหมายถึง 1.4 เท่าของขนาดปัจจุบัน คือ14px</p>
+        <p>- ถ้ากำหนดเป็นขนาดเดิมก็กำหนดเป็น 1em = 10px</p>
+    <h5>rem</h5>
+    <p>กำหนดขนาดโดยอ้างอิงกับ root element ปกติ font-size จะอยู่ที่ 16 px</p>
+    <h5>vw</h5>
+    <p>1% หรือ 1/100 ของ viewport width</p>
+    <p>- width ของ Browser viewport เท่ากับ 750px ค่า 1vm = 7.5px</p>
+    <h5>vh</h5>
+    <p>1% หรือ 1/100 ของ viewport width</p>
+    <p>- height ของ Browser viewport เท่ากับ 900px ค่า 1 vh = 9px</p>
+    <h5>vmin, vmax</h5>
+    <p> กำหนดค่าต่ำสุด และค่าสูงสุดของ viewport</p>
+
+   
 </body>
 </html>
