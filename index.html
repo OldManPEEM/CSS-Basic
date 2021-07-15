@@ -7,9 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>หน่วย (unit)ใน CSS (Absolute) แบบตายตัว</h1>
+    <h1>หน่วย (unit)ใน CSS (Absolute) แบบตายตัว</h1><!--ใช้กับงานค่าคงที่-->
     <h5>px</h5>
-    <p>Pixel (พิกเซล) เป็นหน่วยที่นิยมใช้มากที่สุด โดยที่ 1 px = 0.75pt 
+    <p style="font-size: 20px;">Pixel (พิกเซล) เป็นหน่วยที่นิยมใช้มากที่สุด โดยที่ 1 px = 0.75pt 
         สัมพันธ์กับรายละเอียดหน้าจอ</p>
     <h5>pt</h5>
     <p>Point โดยที่ 1pt = 1/72 inchs ใช้ในงานสิ่งพิมพ์</p>
@@ -23,15 +23,33 @@
     <p>picas (1pc = 12pt)</p>
 
     <h1>หน่วย(Unit) ใน CSS (Relative) แบบอัตราส่วน</h1> <!--มักใช้กับ Web responsive-->
-    <h5>%</h5>
+    <h5 style="font-size: 200%;">%</h5><!--การใช้งาน %-->
     <p>เป็นการกำหนดขนาดเป็นเปอร์เซ็นต์ มักใช้กับความกว้างหรือสูง</p>
-    <h5>em</h5>
+    <h5 style="font-size: 20px;">em</h5><!--กำหนดกว้างสูง-->
+    <!--การใช้ em-->
+    <div style="font-size: 2em;"> <!--ขนาดเป็นสองเท่าของelement ที่ใกล้ที่สุด คือ h5ที่กำหนด fontsize ไว้ 20px-->
+        testem1 <!--เท่ากับขนาด 20px * 2 =40px-->
+        <div style="font-size: 2em;">
+            testem2 <!--เท่ากับขนาด 40px * 2 =80px-->
+            <div style="font-size: 2em;">
+                testem3 <!--เท่ากับขนาด 80px * 2 =160px-->
+                <div style="font-size: 2em;">
+                    testem4 <!--เท่ากับขนาด 160px * 2 =320px-->
+                </div>
+            </div>
+        </div>
+    </div>
     <p>อ้างอิงขนาดกับ element parent ที่ใกล้ที่สุด ใช้ในการกำหนดจำนวนเท่าของ
         ขนาดปัจจุบัน เช่น หากขนาดที่ใช้ตอนนี้คือ 10 px </p>
         <p>- ถ้ากำหนดขนาดเป็น 2em จะหมายถึง 2เท่าของขนาดปัจจุบัน คือ 20px</p>
         <p>- ถ้ากำหนดขนาดเป็น 1.4em จะหมายถึง 1.4 เท่าของขนาดปัจจุบัน คือ14px</p>
         <p>- ถ้ากำหนดเป็นขนาดเดิมก็กำหนดเป็น 1em = 10px</p>
     <h5>rem</h5>
+    <div style="font-size: 2rem;">CSS3</div> <!--เป็น2เท่าของrootelement-->
+    <div style="font-size: 1.5rem;">CSS3</div><!--เป็น1.5เท่า-->
+    <div>CSS3</div>
+    <div>CSS3</div>
+    <div>CSS3</div>
     <p>กำหนดขนาดโดยอ้างอิงกับ root element ปกติ font-size จะอยู่ที่ 16 px</p>
     <h5>vw</h5>
     <p>1% หรือ 1/100 ของ viewport width</p>
