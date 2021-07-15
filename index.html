@@ -4,62 +4,66 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CSS font Example</title>
+    <!--embedของ font kanit จาก googlefont แบบ link นำมาใส่ใน head-->
+    <!--อีกวิธีคือการ import จาก css style sheet-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
+    <style>
+        h1{
+            color: blue;
+        }
+        *{ /* การประกาศแบบ Universal Selector การใช้เครื่องหมาย * เป็นกำหนด Style ทั้งหมดของหน้าเว็บ*/
+            font-size: 20px;
+            font-weight: bold;
+        }
+        /*font*/
+        #title{
+            color: crimson;
+            /*กำหนด font แบบเดียว*/
+            font-family: monospace;
+        }
+        .message{
+            color: green;
+            /*กำหนด font หลายแบบ เพื่อบางBrowserไม่รองรับ ก็จะใช้fontถัดไป*/
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .gf{ /*class ของ tag p googlefont*/
+            font-family: 'Kanit', sans-serif;
+        }
+    
+    </style>
 </head>
 <body>
-    <h1>หน่วย (unit)ใน CSS (Absolute) แบบตายตัว</h1><!--ใช้กับงานค่าคงที่-->
-    <h5>px</h5>
-    <p style="font-size: 20px;">Pixel (พิกเซล) เป็นหน่วยที่นิยมใช้มากที่สุด โดยที่ 1 px = 0.75pt 
-        สัมพันธ์กับรายละเอียดหน้าจอ</p>
-    <h5>pt</h5>
-    <p>Point โดยที่ 1pt = 1/72 inchs ใช้ในงานสิ่งพิมพ์</p>
-    <h5>cm</h5>
-    <p>เชนติเมตร</p>
-    <h5>mm</h5>
-    <p>มิลลิเมตร</p>
-    <h5>in</h5>
-    <p>inches(1in = 96px = 2.54cm)</p>
-    <h5>pc</h5>
-    <p>picas (1pc = 12pt)</p>
+    <h1>CSS3</h1>
+    <p id="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo eveniet eaque cum et numquam mollitia recusandae autem nisi officiis libero?</p>
+    <hr>
+    <h1>CSS3-1</h1>
+    <p class="message">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+         Soluta molestias maxime quidem fuga excepturi tempore?</p>
+    <hr>
+    <!--google font-->
+    <h1>CSS google font</h1>
+    <p class="gf">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis, sapiente.</p>
+    <p class="gf">ภาษาไทย ภาษาไทย ภาษาไทย ภาษาไทย ภาษาไทย</p>
+    <hr>
+    <h1>การกำหนดขนาดข้อความ</h1>
+    <p>font-size กำหนดขนาดข้อความหรือตัวอักษรได้ 2 รูปแบบ คือ</p>
+    <p >แบบค่าคงที่ : <div style="font-size: xx-small;">xx-small</div>, <div style="font-size: x-small;">x-small</div>, <div style="font-size: medium;">medium</div>, <div style="font-size: large;">large</div>, <div style="font-size: x-large;">x-large</div>, <div style="font-size: xx-large;">xx-large</div></p>
+    <p>แบบตัวเลข : <div style="font-size: 10px;">10px</div> <div style="font-size: 20px;">20px</div></p>
+    <h1>การกำหนดความหนาข้อความ</h1>
+    <p>font-weight กำหนดได้ 2 รูปแบบ</p>
+    <p>แบบค่าคงที่ : <div style="font-weight: lighter;">lighter</div>, <div>bold</div>,<div>bolder(ตัวหนากว่า)</div></p>
+    <p>แบบตัวเลข : <div style="font-weight: 100;">100</div>, <div>200</div>,<div style="font-weight: 800;">800</div></p>
+    <p>font-style </p>
+    <p>กำหนดตัวเอียง โดยค่าที่กำหนดได้คือ <p style="font-style: italic;">italic</p>, <p style="font-style: oblique;">oblique(45องศา)</p></p>
+    
 
-    <h1>หน่วย(Unit) ใน CSS (Relative) แบบอัตราส่วน</h1> <!--มักใช้กับ Web responsive-->
-    <h5 style="font-size: 200%;">%</h5><!--การใช้งาน %-->
-    <p>เป็นการกำหนดขนาดเป็นเปอร์เซ็นต์ มักใช้กับความกว้างหรือสูง</p>
-    <h5 style="font-size: 20px;">em</h5><!--กำหนดกว้างสูง-->
-    <!--การใช้ em-->
-    <div style="font-size: 2em;"> <!--ขนาดเป็นสองเท่าของelement ที่ใกล้ที่สุด คือ h5ที่กำหนด fontsize ไว้ 20px-->
-        testem1 <!--เท่ากับขนาด 20px * 2 =40px-->
-        <div style="font-size: 2em;">
-            testem2 <!--เท่ากับขนาด 40px * 2 =80px-->
-            <div style="font-size: 2em;">
-                testem3 <!--เท่ากับขนาด 80px * 2 =160px-->
-                <div style="font-size: 2em;">
-                    testem4 <!--เท่ากับขนาด 160px * 2 =320px-->
-                </div>
-            </div>
-        </div>
-    </div>
-    <p>อ้างอิงขนาดกับ element parent ที่ใกล้ที่สุด ใช้ในการกำหนดจำนวนเท่าของ
-        ขนาดปัจจุบัน เช่น หากขนาดที่ใช้ตอนนี้คือ 10 px </p>
-        <p>- ถ้ากำหนดขนาดเป็น 2em จะหมายถึง 2เท่าของขนาดปัจจุบัน คือ 20px</p>
-        <p>- ถ้ากำหนดขนาดเป็น 1.4em จะหมายถึง 1.4 เท่าของขนาดปัจจุบัน คือ14px</p>
-        <p>- ถ้ากำหนดเป็นขนาดเดิมก็กำหนดเป็น 1em = 10px</p>
-    <h5>rem</h5>
-    <div style="font-size: 2rem;">CSS3</div> <!--เป็น2เท่าของrootelement-->
-    <div style="font-size: 1.5rem;">CSS3</div><!--เป็น1.5เท่า-->
-    <div>CSS3</div>
-    <div>CSS3</div>
-    <div>CSS3</div>
-    <p>กำหนดขนาดโดยอ้างอิงกับ root element ปกติ font-size จะอยู่ที่ 16 px</p>
-    <h5>vw</h5>
-    <p>1% หรือ 1/100 ของ viewport width</p>
-    <p>- width ของ Browser viewport เท่ากับ 750px ค่า 1vm = 7.5px</p>
-    <h5>vh</h5>
-    <p>1% หรือ 1/100 ของ viewport width</p>
-    <p>- height ของ Browser viewport เท่ากับ 900px ค่า 1 vh = 9px</p>
-    <h5>vmin, vmax</h5>
-    <p> กำหนดค่าต่ำสุด และค่าสูงสุดของ viewport</p>
 
-   
+
+
+
+
 </body>
 </html>
